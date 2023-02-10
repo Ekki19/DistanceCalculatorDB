@@ -9,7 +9,6 @@ public class DistanceCalculatorDbApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DistanceCalculatorDbApplication.class, args);
-        System.out.println();
     }
 
 }
