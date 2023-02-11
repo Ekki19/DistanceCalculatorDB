@@ -1,57 +1,100 @@
 package com.example.distancecalculatordb.entity;
 
 public class Station {
+    private int evaNr;
+    private String ds100;
+    private String ifopt;
+    private String name;
+    private String verkehr;
+    private String laenge;
+    private String breite;
+    private String betreiberName;
+    private int betreiberNr;
+    private String status;
 
-    private String from;
-    private String to;
-    private double distance;
-    private String unit;
-
-    public Station(String from, String to, double distance, String unit) {
-        this.from = from;
-        this.to = to;
-        this.distance = distance;
-        this.unit = unit;
-    }
-
-    public Station() {
+    public Station(){
 
     }
 
-    @Override
-    public String toString() {
-        return "Station{" + "from=" + this.from + ", to='" + this.to + '\'' + ", distance='" + this.distance + '\'' + ", unit='" + this.unit + '\'' +  '}';
+    public int getEvaNr() {
+        return evaNr;
     }
 
-    public String getFrom() {
-        return from;
+    public void setEvaNr(int evaNr) {
+        this.evaNr = evaNr;
     }
 
-    public void setFrom(String from) {
-        this.from = from;
+    public String getDs100() {
+        return ds100;
     }
 
-    public String getTo() {
-        return to;
+    public void setDs100(String ds100) {
+        this.ds100 = ds100;
     }
 
-    public void setTo(String to) {
-        this.to = to;
+    public String getIfopt() {
+        return ifopt;
     }
 
-    public double getDistance() {
-        return distance;
+    public void setIfopt(String ifopt) {
+        this.ifopt = ifopt;
     }
 
-    public void setDistance(int distance) {
-        this.distance = distance;
+    public String getName() {
+        return name;
     }
 
-    public String getUnit() {
-        return unit;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setUnit(String unit) {
-        this.unit = unit;
+    public String getVerkehr() {
+        return verkehr;
     }
+
+    public void setVerkehr(String verkehr) {
+        this.verkehr = verkehr;
+    }
+
+    public String getLaenge() {
+        return laenge;
+    }
+
+    public void setLaenge(String laenge) {
+        this.laenge = laenge;
+    }
+
+    public String getBreite() {
+        return breite;
+    }
+
+    public void setBreite(String breite) {
+        this.breite = breite;
+    }
+
+    public String getBetreiberName() {
+        return betreiberName;
+    }
+
+    public void setBetreiberName(String betreiberName) {
+        this.betreiberName = betreiberName;
+    }
+
+    public int getBetreiberNr() {
+        return betreiberNr;
+    }
+
+    public void setBetreiberNr(int betreiberNr) {
+        this.betreiberNr = betreiberNr;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+
 }
