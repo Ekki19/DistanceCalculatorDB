@@ -3,17 +3,20 @@ package com.example.distancecalculatordb.controller;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
+import com.example.distancecalculatordb.dto.StationDTO;
 import com.example.distancecalculatordb.entity.Station;
 import com.example.distancecalculatordb.logic.CSVParser;
 import com.example.distancecalculatordb.logic.DistanceCalculator;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1")
 public class StationController {
 
+
     @GetMapping("/distance/{from}/{to}")
-    private String getDistance(@PathVariable String from, @PathVariable String to){
+    private StationDTO getDistance(@PathVariable String from, @PathVariable String to){
         CSVParser csvParser = new CSVParser();
         List<Station> stationList = csvParser.getStations();
 
@@ -28,10 +31,24 @@ public class StationController {
                 stationTo = stationList.get(i);
             }
         }
+        if(stationFrom == null || stationTo == null){
+            StationDTO stationDTO = new StationDTO();
+            stationDTO.setFrom("FEHLER");
+            stationDTO.setTo("FEHLER");
+            stationDTO.setDistance(-1);
+            stationDTO.setUnit("FEHLER");
+            return stationDTO;
+        }
 
         DistanceCalculator distanceCalculator = new DistanceCalculator();
-        double distance = distanceCalculator.calculateDistance(stationFrom, stationTo);
+        int distance = (int) distanceCalculator.calculateDistance(stationFrom, stationTo);
 
-        return String.valueOf(distance);
+        StationDTO stationDTO = new StationDTO();
+        stationDTO.setFrom(stationFrom.getName());
+        stationDTO.setTo(stationTo.getName());
+        stationDTO.setDistance(distance);
+        stationDTO.setUnit("km");
+
+        return stationDTO;
     }
 }

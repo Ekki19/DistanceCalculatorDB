@@ -2,3 +2,12 @@ Mögliche Erweiterungen:
 -Authentifizierung/Autorisierung bei der Web Applikation
 -Auslagerung der CSV Datei in z.B. Datenbank
 -...
+-fehlermeldungen verschicken falls etwas schief läuft (falscher input etc.)
+-Liste als hashmap, key ist dann ds100
+
+MAVEN
+-versionsverwaltung Plugins
+-"build and dependency verwaltungstool"
+-
+
+DatenTransferObjekt als Rückgabe für Abkapselung der Logik
