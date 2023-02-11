@@ -1,15 +1,30 @@
 package com.example.distancecalculatordb.entity;
 
+import com.opencsv.bean.CsvBindByName;
+import com.opencsv.bean.CsvNumber;
+
 public class Station {
+    @CsvBindByName(column = "EVA_NR")
     private int evaNr;
+    @CsvBindByName(column = "DS100")
     private String ds100;
+    @CsvBindByName(column = "IFOPT")
     private String ifopt;
+    @CsvBindByName(column = "NAME")
     private String name;
+    @CsvBindByName(column = "Verkehr")
     private String verkehr;
-    private String laenge;
-    private String breite;
+    @CsvBindByName(column = "Laenge")
+    @CsvNumber("#,#")
+    private double laenge;
+    @CsvBindByName(column = "Breite")
+    @CsvNumber("#,#")
+    private double breite;
+    @CsvBindByName(column = "Betreiber_Name")
     private String betreiberName;
+    @CsvBindByName(column = "Betreiber_Nr")
     private int betreiberNr;
+    @CsvBindByName(column = "Status")
     private String status;
 
     public Station(){
@@ -56,19 +71,19 @@ public class Station {
         this.verkehr = verkehr;
     }
 
-    public String getLaenge() {
+    public double getLaenge() {
         return laenge;
     }
 
-    public void setLaenge(String laenge) {
+    public void setLaenge(double laenge) {
         this.laenge = laenge;
     }
 
-    public String getBreite() {
+    public double getBreite() {
         return breite;
     }
 
-    public void setBreite(String breite) {
+    public void setBreite(double breite) {
         this.breite = breite;
     }
 
