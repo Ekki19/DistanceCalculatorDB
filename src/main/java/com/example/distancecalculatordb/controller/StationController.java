@@ -1,13 +1,11 @@
 package com.example.distancecalculatordb.controller;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 
 import com.example.distancecalculatordb.dto.StationDTO;
 import com.example.distancecalculatordb.entity.Station;
 import com.example.distancecalculatordb.logic.CSVParser;
 import com.example.distancecalculatordb.logic.DistanceCalculator;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -23,12 +21,12 @@ public class StationController {
         Station stationFrom = null;
         Station stationTo = null;
 
-        for(int i=0; i<stationList.size(); i++){
-            if(stationList.get(i).getDs100().equals(from)){
-                stationFrom = stationList.get(i);
+        for (Station station : stationList) {
+            if (station.getDs100().equals(from)) {
+                stationFrom = station;
             }
-            if(stationList.get(i).getDs100().equals(to)){
-                stationTo = stationList.get(i);
+            if (station.getDs100().equals(to)) {
+                stationTo = station;
             }
         }
         if(stationFrom == null || stationTo == null){
