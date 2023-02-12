@@ -1,3 +1,12 @@
+Author: Jan Ekgardt
+
+Projekt: Berechnung der Distanz (Luftlinie) zwischen zwei Bahnhöfen
+
+Struktur:
+-Model, Controller als Grundgerüst
+-Parser sowie die Berechnung selbst in eigene Klassen
+-erste JUnit Tests für grobe Fehler
+
 Mögliche Erweiterungen:
 -Authentifizierung/Autorisierung bei der Web Applikation
 -Auslagerung der CSV Datei in z.B. Datenbank
