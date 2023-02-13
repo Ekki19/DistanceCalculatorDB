@@ -1,13 +1,18 @@
 package com.example.distancecalculatordb.logic;
 
-import com.example.distancecalculatordb.entity.Station;
+import com.example.distancecalculatordb.model.Station;
 
 public class DistanceCalculator {
 
+    /*
+        Haversine formula für die Berechnung genutzt
+        https://www.daniel-braun.com/technik/distanz-zwischen-zwei-gps-koordinaten-in-java-berchenen/
+     */
+    final int radius = 6371;
+
     public double calculateDistance(Station from, Station to){
 
-        //Haversine formula für die Berechnung genutzt
-        //https://www.daniel-braun.com/technik/distanz-zwischen-zwei-gps-koordinaten-in-java-berchenen/
+
 
         double fromLaenge = from.getLaenge();
         double fromBreite = from.getBreite();
@@ -15,7 +20,7 @@ public class DistanceCalculator {
         double toLaenge = to.getLaenge();
         double toBreite = to.getBreite();
 
-        int radius = 6371;
+
 
         double lat = Math.toRadians(toBreite - fromBreite);
         double lon = Math.toRadians(toLaenge- fromLaenge);

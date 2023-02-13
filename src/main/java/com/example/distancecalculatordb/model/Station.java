@@ -1,7 +1,9 @@
-package com.example.distancecalculatordb.entity;
+package com.example.distancecalculatordb.model;
 
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvNumber;
+
+
 
 public class Station {
     @CsvBindByName(column = "EVA_NR")

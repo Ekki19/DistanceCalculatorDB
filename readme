@@ -3,20 +3,16 @@ Author: Jan Ekgardt
 Projekt: Berechnung der Distanz (Luftlinie) zwischen zwei Bahnhöfen
 
 Struktur:
--Model, Controller als Grundgerüst
+-Model, (View), Controller als Grundgerüst
 -Parser sowie die Berechnung selbst in eigene Klassen
 -erste JUnit Tests für grobe Fehler
+-DTO abgekapselt um die Rückgabe sowie Struktur übersichtlich zu halten
 
-Mögliche Erweiterungen:
+Nächste Schritte:
 -Authentifizierung/Autorisierung bei der Web Applikation
 -Auslagerung der CSV Datei in z.B. Datenbank
--...
--fehlermeldungen verschicken falls etwas schief läuft (falscher input etc.)
--Liste als hashmap, key ist dann ds100
+-robustere Anwendung mit aussagekräftigen Fehlermeldungen
 
-MAVEN
--versionsverwaltung Plugins
--"build and dependency verwaltungstool"
--
-
-DatenTransferObjekt als Rückgabe für Abkapselung der Logik
+Anwendung:
+-Anwendung muss vorher gestartet werden
+-localhost:8080/api/v1/distance/{from}/{to} aufrufen um die Berechnung durchzuführen
